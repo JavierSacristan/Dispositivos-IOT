@@ -1,0 +1,9 @@
+id INT
+Tipo varchar(30) Temperatura|Luminosidad|Caudal|Viento|Contaminacion
+Cantidad float
+Hora time
+Fecha date
+Latitud varchar(50)
+Longitud varchar(50)
+Direccion varchar(100)
+Descripcion varchar(300)
