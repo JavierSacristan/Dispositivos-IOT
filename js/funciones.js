@@ -117,10 +117,10 @@ function Trazar_onclick() {
 }
 
 function Mideme() {  
-            var pi=murallas[0].toString().replace('(',"");
+            var pi=murallas[murallas.length-2].toString().replace('(',"");
             pi=pi.toString().replace(')',"");
             api=pi.split(",");
-            var pf=murallas[1].toString().replace('(',"");
+            var pf=murallas[murallas.length-1].toString().replace('(',"");
             pf=pf.toString().replace(')',"");
             apf=pf.split(",");
                 
@@ -134,6 +134,6 @@ function Mideme() {
             distancia=Math.round(distancia);
             Pdistancia.innerHTML="Distancia: "+distancia+" metros";
             pos=0;
-            murallas = new Array();
+            //murallas = new Array();
       
 }
