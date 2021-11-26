@@ -45,6 +45,32 @@ google.maps.event.addListener(map, 'click', function (event) {
         map: map,
         nombre: 'Pepino' // No hace nada especial, Simplemente es una propiedad  
     });
+
+    //Array de imagenes que cambiaran solas
+    let aImagenes=new Array();
+    aImagenes[0]="./imagenes/bandera.png";
+    aImagenes[1]="./imagenes/Catalina.png";
+    aImagenes[2]="./imagenes/lupa.jpg";
+    aImagenes[3]="./imagenes/Logo.jpg";
+
+    let i=0;
+    aaa=setInterval(mostrar,2000);
+
+    function mostrar(){
+        icono.url=aImagenes[i];
+
+        marker = new google.maps.Marker({
+            position: event.latLng,
+            icon: icono,
+            map: map,
+            nombre: 'Pepino' // No hace nada especial, Simplemente es una propiedad  
+        });
+        i++;
+        if (i==3){
+            window.clearInterval(aaa);
+        }
+    }   
+
 // Evento para el marcador creado
     google.maps.event.addListener(marker, 'click', function () {
         alert("Click en marcador " + this.nombre + latitud_longitud.value);
