@@ -3,7 +3,7 @@ bGrabar.addEventListener("click", grabar, false);
 function grabar() {
     grabarRegistro = true;
     nuevo = true;
-    //'"' + "IdVecino" + '":' + '"' + IdVecino.value + '",'
+
     cfc = cFecha.value.split("-");
     cFecha.value = cfc[2] + "-" + cfc[1] + "-" + cfc[0];
 
@@ -16,7 +16,8 @@ function grabar() {
         + '"' + "Direccion" + '":' + '"' + cDireccion.value + '",'
         + '"' + "Descripcion" + '":' + '"' + cDescripcion.value + '"';
 
-    alert(datosElementoUrbano)
+    //alert(datosElementoUrbano)
+    alert("Registro grabado");
     var ajaxrequest = new XMLHttpRequest();
     var jdatoselemento = "{" + datosElementoUrbano + "}";
     var envio = "Todo=" + jdatoselemento;
@@ -216,7 +217,7 @@ function modificarRegistro() {
 
        if (ajaxrequest.readyState === 4 && (ajaxrequest.status === 200)) {                  
            var datosLeidosJSON = ajaxrequest.response;
-           //alert("Datos Recibidos response :" + datosLeidosJSON);
+           alert("Registro modificado");
            var sitioLeidos = JSON.parse(datosLeidosJSON);
            if (sitioLeidos != null) {
                 
@@ -252,7 +253,7 @@ function borrarRegistro() {
 
        if (ajaxrequest.readyState === 4 && (ajaxrequest.status === 200)) {                  
            var datosLeidosJSON = ajaxrequest.response;
-           //alert("Datos Recibidos response :" + datosLeidosJSON);
+           alert("Registro eliminado");
            var sitioLeidos = JSON.parse(datosLeidosJSON);
            if (sitioLeidos != null) {
                 alert("Registro eliminado");

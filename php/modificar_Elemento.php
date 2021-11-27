@@ -23,7 +23,7 @@
 $sql= "UPDATE IOT_SacristanJ SET tipo='$tipo', cantidad='$cantidad', hora='$hora', fecha='$fecha', latitud='$latitud', longitud='$longitud', direccion='$direccion', descripcion='$descripcion' WHERE id=$id";
 
 $resultado = mysqli_query($connect,$sql);
-echo "Registro modificado";
+
 
 $connect->close();
 
