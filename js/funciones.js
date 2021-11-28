@@ -164,9 +164,7 @@ function Mideme() {
       
 }
 
-function marcadorPosiciones(){
-    let marker;
-    
+function marcadorPosiciones(){    
     //recojo la latitud y la longitud del registro que se este mostrando
     let latitud=document.getElementById("cLatitud").value;
     let longitud=document.getElementById("cLongitud").value;
