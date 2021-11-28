@@ -67,7 +67,7 @@ google.maps.event.addListener(map, 'click', function (event) {
         });
         i++;
         if (i==3){
-            window.clearInterval(aaa);
+            i=0;
         }
     }   
 
@@ -162,4 +162,55 @@ function Mideme() {
             pos=0;
             //murallas = new Array();
       
+}
+
+function marcadorPosiciones(){
+    let marker;
+    
+    //recojo la latitud y la longitud del registro que se este mostrando
+    let latitud=document.getElementById("cLatitud").value;
+    let longitud=document.getElementById("cLongitud").value;
+
+    let latlog = new google.maps.LatLng(latitud, longitud);
+
+    var icono = {
+        url: "./imagenes/curso.png", // url
+        scaledSize: new google.maps.Size(25, 25), // scaled size
+        origin: new google.maps.Point(0, 0), // origin
+        anchor: new google.maps.Point(0, 0) // anchor
+    };
+
+    // Crea el marcador y lo añade la mapa (map)
+    marker = new google.maps.Marker({
+        position: latlog,
+        icon: icono,
+        map: map,
+        nombre: 'Pepino' // No hace nada especial, Simplemente es una propiedad  
+    });
+
+    //Array de imagenes que cambiaran solas
+    let aImagenes=new Array();
+    aImagenes[0]="./imagenes/bandera.png";
+    aImagenes[1]="./imagenes/Catalina.png";
+    aImagenes[2]="./imagenes/lupa.jpg";
+    aImagenes[3]="./imagenes/Logo.jpg";
+
+    let i=0;
+    aaa=setInterval(mostrar,2000);
+
+    function mostrar(){
+        icono.url=aImagenes[i];
+
+        marker = new google.maps.Marker({
+            position: latlog,
+            icon: icono,
+            map: map,
+            nombre: 'Pepino' // No hace nada especial, Simplemente es una propiedad  
+        });
+        i++;
+        if (i==3){
+            i=0;
+        }
+    }
+    
 }

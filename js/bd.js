@@ -91,7 +91,7 @@ function siguiente(condicion) {
 
 function anterior(condicion) {
     nuevo = false;
-   grabarRegistro = true;
+    grabarRegistro = true;
    if (cId.value == "") {
        cId.value = 0;
    }
@@ -127,7 +127,7 @@ function anterior(condicion) {
  
 function primerRegistro() {
     nuevo = false;
-   grabarRegistro = true;
+    grabarRegistro = true;
    if (cId.value == "") {
        cId.value = 0;
    }
@@ -279,4 +279,6 @@ function visualizaRegistro(sitioLeidos) {
     cLongitud.value = sitioLeidos[0].longitud;
     cDireccion.value = sitioLeidos[0].direccion;
     cDescripcion.value = sitioLeidos[0].descripcion;
+
+    marcadorPosiciones();
 }
